@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="m-3 p-5 bg-light text-dark rounded shadow">
+    <form method="POST" autocomplete="off">
+        <h2>Found new puppy?</h2>
+        <p>
+            Add to database for tracking..
+        </p>
+        {{form.hidden_tag()}}
+        {{form.name.label}} {{form.name(placeholder='Puppy name')}}
+        {{form.submit(class='btn btn-success')}}
+    </form>
+</div>
+{% endblock %}

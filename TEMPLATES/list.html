@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="m-3 p-5 bg-light text-dark rounded shadow">
+    <h2>
+        Here are the all puppies list
+    </h2>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Puppy ID
+                </th>
+                <th>
+                    Puppy name
+                </th>
+                <th>
+                    Owner name
+                </th>
+            </tr>
+        </thead>
+        {% for puppy in puppies %}
+            {% if puppy.owner %}
+                <tr>
+            {% else %}
+                <tr class="table-danger">
+            {% endif %}
+                <td>
+                    {{puppy.id}}
+                </td>
+                <td>
+                    {{puppy.name}}
+                </td>
+                <td>
+                {% if puppy.owner %}
+                    {{puppy.owner.name}}
+                {% else %}
+                    No owner yet
+                {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

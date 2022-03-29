@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="m-3 p-5 bg-light text-dark rounded shadow">
+    <form method="POST" autocomplete="off">
+        <h2>
+            Puppy got owner?
+        </h2>
+        <p>
+            Delete puppy from database..
+        </p>
+        {{form.hidden_tag()}}
+        {{form.id.label}} {{form.id()}}
+        {{form.submit(class='btn btn-warning')}}
+    </form>
+</div>
+{% endblock %}
